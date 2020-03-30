@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+language: minimal
+
+script:
+  - bash build.sh
+
+deploy:
+  provider: script
+  script: bash deploy.sh
+  on:
+    tags: true
